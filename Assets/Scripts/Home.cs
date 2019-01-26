@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Home : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Source sourceSun;
+    public Source sourceCloud;
+    public Source sourceTree;
+
+    
+
+    void OnSourceTrackSun(Source src)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnSourceTrackCloud(Source src)
     {
-        
+
+    }
+
+    void OnSourceTrackTree(Source src)
+    {
+
     }
 }
