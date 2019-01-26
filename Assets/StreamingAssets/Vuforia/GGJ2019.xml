@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="SunTarge1000" size="0.100000 0.100000" />
+    <ImageTarget name="CloudTarget1000" size="0.100000 0.100000" />
+    <ImageTarget name="FlowerTargetTest1000per" size="0.100000 0.100000" />
+    <ImageTarget name="HouseTargetTest1000per" size="1.000000 1.000000" />
     <ImageTarget name="Sample_Rocks" size="1.000000 0.701009" />
     <ImageTarget name="house320" size="1.000000 1.000000" />
     <ImageTarget name="house32" size="1.000000 1.000000" />

@@ -17,6 +17,20 @@ public class Source : MonoBehaviour, ITrackableEventHandler
     public TrackableBehaviour.Status previousStatus { get; private set; }
     public TrackableBehaviour.Status status { get; private set; }
 
+    protected TrackableBehaviour mTrackableBehaviour;
+
+    void OnDestroy()
+    {
+        if (mTrackableBehaviour)
+            mTrackableBehaviour.UnregisterTrackableEventHandler(this);
+    }
+
+    void Awake()
+    {
+        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+        mTrackableBehaviour.RegisterTrackableEventHandler(this);
+    }
+
     void ITrackableEventHandler.OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
         this.previousStatus = previousStatus;
