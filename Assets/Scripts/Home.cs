@@ -66,7 +66,11 @@ public class SourceInfo
 
     void OnSignalTrackUpdate(Source src)
     {
-        
+        if(src.status == TrackableBehaviour.Status.TRACKED)
+        {
+            if (signalScaleChanged)
+                signalScaleChanged.Invoke(scale);
+        }
     }
 }
 

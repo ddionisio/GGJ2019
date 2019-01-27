@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScaleParticleIntensity : MonoBehaviour
 {
     public ParticleSystem particleSource;
+    public Source source;
 
     public M8.RangeFloat startDelayMultRange;
 
@@ -26,7 +27,7 @@ public class ScaleParticleIntensity : MonoBehaviour
     {
         var dat = particleSource.main;
 
-        if (s > 0f)
+        if (source.status == Vuforia.TrackableBehaviour.Status.TRACKED && s < 1f)
         {
             dat.startDelayMultiplier = startDelayMultRange.Lerp(s);
             dat.loop = true;
