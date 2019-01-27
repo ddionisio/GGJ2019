@@ -5,10 +5,11 @@ using UnityEngine;
 public class Plant : MonoBehaviour, M8.IPoolSpawn
 {
     public const string parmSourceSun = "sun";
-    
-    public M8.Animator.Animate animator;
-    [M8.Animator.TakeSelector(animatorField = "animator")]
-    public string take;
+
+    public Transform animPosTrans;
+    public Vector3 beginLPos;
+    public Vector3 endLPos;
+    public float animDelay;
 
     public float growthDelay = 1f;
 
@@ -52,7 +53,7 @@ public class Plant : MonoBehaviour, M8.IPoolSpawn
 
             if (mAnimScale < 0f) mAnimScale = 0f;
             else if (mAnimScale > 1f) mAnimScale = 1f;
-
+            
             if(animator && !string.IsNullOrEmpty(take))
                 animator.Goto(take, mAnimScale * animator.GetTakeTotalTime(take));
         }*/
@@ -62,8 +63,25 @@ public class Plant : MonoBehaviour, M8.IPoolSpawn
     {
         mSourceSun = parms.GetValue<Source>(parmSourceSun);
 
-        if (animator && !string.IsNullOrEmpty(take))
-            //animator.ResetTake(take);
-            animator.Play(take);
+        StartCoroutine(DoAnim());
+    }
+
+    IEnumerator DoAnim()
+    {
+        animPosTrans.localPosition = beginLPos;
+
+        var easeFunc = DG.Tweening.Core.Easing.EaseManager.ToEaseFunction(DG.Tweening.Ease.OutSine);
+
+        float curTime = 0f;
+        while(curTime < animDelay)
+        {
+            yield return null;
+
+            curTime += Time.deltaTime;
+
+            var t = easeFunc(curTime, animDelay, 0f, 0f);
+
+            animPosTrans.localPosition = Vector3.Lerp(beginLPos, endLPos, t);
+        }
     }
 }

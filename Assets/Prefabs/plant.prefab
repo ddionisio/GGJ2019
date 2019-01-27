@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5825180339713367216}
   - component: {fileID: 3520797201233524874}
   - component: {fileID: 5407246679853754009}
-  - component: {fileID: 5294852711956474527}
   m_Layer: 10
   m_Name: plant
   m_TagString: Untagged
@@ -46,8 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ddce50e7f2651439eec10b3b24232e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 5294852711956474527}
-  take: growth
+  animPosTrans: {fileID: 7712781506578013500}
+  beginLPos: {x: 0, y: -0.06, z: 0}
+  endLPos: {x: 0, y: 0.115, z: 0}
+  animDelay: 1
   growthDelay: 1
   sunDistanceRange:
     min: 0
@@ -68,103 +69,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.07
   m_Center: {x: 0, y: 0.05, z: 0}
---- !u!114 &5294852711956474527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3071619962698064606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 189a50e0ddb1421498ef25dcd885c95b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  takeData:
-  - name: growth
-    frameRate: 30
-    endFramePadding: 0
-    numLoop: 1
-    loopMode: 0
-    loopBackToFrame: 0
-    trackCounter: 2
-    groupCounter: 0
-    rootGroup:
-      group_name: 
-      group_id: 0
-      elements: 02000000
-      foldout: 1
-    groupValues: []
-  _defaultTakeName: 
-  _meta: {fileID: 0}
-  sequenceLoadAll: 1
-  sequenceKillWhenDone: 0
-  playOnEnable: 0
-  isGlobal: 0
-  onDisableAction: 3
-  updateType: 0
-  updateTimeIndependent: 0
-  serializeData:
-    _audioTracks: []
-    _audioKeys: []
-    _cameraSwitcherTracks: []
-    _cameraSwitcherKeys: []
-    _eventTracks: []
-    _eventKeys: []
-    _goSetActiveTracks: []
-    _goSetActiveKeys: []
-    _materialTracks: []
-    _materialKeys: []
-    _orientationTracks: []
-    _orientationKeys: []
-    _propertyTracks: []
-    _propertyKeys: []
-    _rotationEulerTracks: []
-    _rotationEulerKeys: []
-    _rotationTracks: []
-    _rotationKeys: []
-    _translationTracks:
-    - id: 2
-      name: Track1
-      foldout: 1
-      _targetPath: 
-      _obj: {fileID: 7712781506578013500}
-      pixelSnap: 0
-      pixelPerUnit: 100
-    _translationKeys:
-    - version: 2
-      interp: 0
-      frame: 1
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      position: {x: 0, y: -0.06, z: 0}
-      endFrame: 30
-      path:
-      - {x: 0, y: -0.06, z: 0}
-      - {x: 0, y: 0.17, z: 0}
-      isConstSpeed: 1
-    - version: 2
-      interp: 0
-      frame: 30
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      position: {x: 0, y: 0.17, z: 0}
-      endFrame: 30
-      path: []
-      isConstSpeed: 1
-    _unityAnimationTracks: []
-    _unityAnimationKeys: []
-    _scaleTracks: []
-    _scaleKeys: []
-    _trackLookups:
-    - type: 10
-      index: 0
-      keyIndices: 0000000001000000
-    _takeTrackCounts: 01000000
 --- !u!1 &3764082977645706861
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3764082977645706861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.06, z: 0}
+  m_LocalPosition: {x: 0, y: 0.115, z: 0}
   m_LocalScale: {x: 0.1, y: 0.2, z: 0.1}
   m_Children: []
   m_Father: {fileID: 5825180339713367216}
