@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="QR_House2" size="0.100000 0.100000" />
+    <ImageTarget name="QR_Sun" size="0.100000 0.100000" />
+    <ImageTarget name="QR_HouseNew" size="0.100000 0.100000" />
+    <ImageTarget name="QR_Flower" size="0.100000 0.100000" />
+    <ImageTarget name="QR_Cloud" size="0.100000 0.100000" />
+    <ImageTarget name="QR_House" size="0.100000 0.100000" />
+    <ImageTarget name="QR_Cloud_Clear160" size="0.100000 0.100000" />
+    <ImageTarget name="QRCloudTest50" size="0.100000 0.100000" />
+    <ImageTarget name="QRCloudTest" size="0.100000 0.100207" />
     <ImageTarget name="SunTarge1000" size="0.100000 0.100000" />
     <ImageTarget name="CloudTarget1000" size="0.100000 0.100000" />
     <ImageTarget name="FlowerTargetTest1000per" size="0.100000 0.100000" />
